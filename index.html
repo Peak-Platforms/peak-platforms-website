@@ -523,16 +523,19 @@
     <div class="verticals-grid fade-up">
 
       <!-- CheerPal -->
-      <a class="vertical-card live" href="https://cheerpal.fun" target="_blank">
+      <div class="vertical-card live">
         <div class="vc-color-bar" style="background:linear-gradient(90deg,#FF2D78,#ff6ba8);"></div>
         <div class="vc-status live-status"><div class="vc-status-dot"></div>Live</div>
         <div class="vc-icon">📣</div>
-        <div class="vc-name">CheerPal</div>
+        <a href="https://cheerpal.fun" target="_blank" style="text-decoration:none;position:relative;z-index:1;"><div class="vc-name" style="color:var(--text);">CheerPal</div></a>
         <div class="vc-market">Cheer & Gymnastics</div>
         <div class="vc-desc">Real-time broadcast platform for cheer and gymnastics gyms. Directors fire alerts to families on competition weekends. Teams, scores, schedule changes — all delivered instantly to parent phones.</div>
-        <div class="vc-intl">🌎 Also available: mx.cheerpal.fun &nbsp;·&nbsp; br.cheerpal.fun</div>
-        <div class="vc-arrow">Visit CheerPal →</div>
-      </a>
+        <div style="margin-top:auto;padding-top:20px;border-top:1px solid var(--border);display:flex;flex-direction:column;gap:8px;position:relative;z-index:1;">
+          <div style="font-size:0.72rem;font-weight:600;letter-spacing:1px;color:var(--muted);text-transform:uppercase;">Also Available</div>
+          <a href="https://mx.cheerpal.fun" target="_blank" style="font-size:0.88rem;font-weight:600;color:var(--gold);text-decoration:none;">🇲🇽 mx.cheerpal.fun →</a>
+          <a href="https://br.cheerpal.fun" target="_blank" style="font-size:0.88rem;font-weight:600;color:var(--gold);text-decoration:none;">🇧🇷 br.cheerpal.fun →</a>
+        </div>
+      </div>
 
       <!-- HotSeat -->
       <a class="vertical-card live" href="https://hotseat.fun" target="_blank">
@@ -590,7 +593,7 @@
       <!-- BroadcastPal -->
       <a class="vertical-card live" href="https://broadcastpal.fun" target="_blank">
         <div class="vc-color-bar" style="background:linear-gradient(90deg,#7b2ff7,#b84ef7);"></div>
-        <div class="vc-status dev-status"><div class="vc-status-dot"></div>In Development</div>
+        <div class="vc-status live-status"><div class="vc-status-dot"></div>Live</div>
         <div class="vc-icon">📡</div>
         <div class="vc-name">BroadcastPal</div>
         <div class="vc-market">Broadcast Infrastructure</div>
