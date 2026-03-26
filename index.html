@@ -156,7 +156,6 @@
   }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
 
-  /* Hero scroll indicator */
   .hero-scroll {
     position: absolute; bottom: 40px; left: 60px;
     display: flex; align-items: center; gap: 12px;
@@ -168,7 +167,6 @@
   }
   @keyframes scrollLine { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(.5)} }
 
-  /* Hero vertical text */
   .hero-vertical {
     position: absolute; right: 60px; top: 50%; transform: translateY(-50%) rotate(90deg);
     font-size: 0.68rem; letter-spacing: 4px; color: var(--faint);
@@ -293,7 +291,6 @@
   /* ── MODEL SECTION ── */
   .model { padding: 120px 60px; background: var(--panel); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .model-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .model-content {}
   .model-tiers { display: flex; flex-direction: column; gap: 12px; }
   .model-tier {
     background: var(--panel2); border: 1px solid var(--border);
@@ -356,6 +353,58 @@
   .cta-card-text { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
   .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
 
+  /* ── MISSION / FOUNDATION SECTION ── */
+  .mission {
+    padding: 80px 60px;
+    background: var(--black);
+    border-top: 1px solid var(--border);
+    position: relative; overflow: hidden;
+  }
+  .mission::before {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: .3;
+  }
+  .mission-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px;
+    align-items: center;
+  }
+  .mission-text {}
+  .mission-text .section-eyebrow { margin-bottom: 16px; }
+  .mission-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 400; color: var(--text); line-height: 1.2;
+    margin-bottom: 20px;
+  }
+  .mission-headline em { font-style: italic; color: var(--gold); }
+  .mission-body {
+    font-size: 0.92rem; color: var(--muted); line-height: 1.85;
+    margin-bottom: 28px;
+  }
+  .mission-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.82rem; font-weight: 700; letter-spacing: 1.5px;
+    color: var(--gold); text-decoration: none; text-transform: uppercase;
+    transition: gap .2s;
+  }
+  .mission-link:hover { gap: 14px; }
+  .mission-link-arrow { font-size: 1rem; }
+
+  .mission-pillars { display: flex; flex-direction: column; gap: 12px; }
+  .mission-pillar {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 22px 24px;
+    display: flex; align-items: flex-start; gap: 16px;
+    transition: border-color .3s;
+  }
+  .mission-pillar:hover { border-color: var(--gold); }
+  .mp-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 2px; }
+  .mp-name { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+  .mp-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+
   /* ── FOOTER ── */
   footer {
     padding: 40px 60px; background: var(--black);
@@ -370,6 +419,12 @@
   .footer-links a { font-size: 0.78rem; color: var(--faint); text-decoration: none; letter-spacing: 1px; transition: color .2s; }
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-size: 0.75rem; color: var(--faint); }
+  .footer-mission-note {
+    width: 100%; padding-top: 16px; border-top: 1px solid var(--border);
+    font-size: 0.72rem; color: var(--faint); text-align: center; line-height: 1.7;
+  }
+  .footer-mission-note a { color: var(--gold); text-decoration: none; transition: opacity .2s; }
+  .footer-mission-note a:hover { opacity: .8; }
 
   /* ── SCROLL ANIMATIONS ── */
   .fade-up { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
@@ -392,6 +447,8 @@
     .diff-grid { grid-template-columns: 1fr; }
     .cta { padding: 80px 24px; }
     .cta-cards { grid-template-columns: 1fr; }
+    .mission { padding: 60px 24px; }
+    .mission-inner { grid-template-columns: 1fr; gap: 40px; }
     footer { padding: 32px 24px; }
   }
 </style>
@@ -412,6 +469,7 @@
     <a href="#platform">Platform</a>
     <a href="#verticals">Solutions</a>
     <a href="#model">Licensing</a>
+    <a href="#mission">Our Foundation</a>
     <a href="#contact">Contact</a>
   </div>
   <a class="nav-contact" href="#contact">Enterprise Inquiry</a>
@@ -555,8 +613,11 @@
         <div class="vc-icon">🏈</div>
         <div class="vc-name">XSEN</div>
         <div class="vc-market">Sports Entertainment</div>
-        <div class="vc-desc">The eXpereince Sports & Entertainment Network. AI-powered fan engagement and broadcast for university sports programs. Live alerts, highlights, NIL micro-donations, and real-time score updates for passionate fan bases.</div>
+        <div class="vc-desc">The eXperience Sports & Entertainment Network. AI-powered fan engagement and broadcast for university sports programs. Live alerts, highlights, NIL micro-donations, and real-time score updates for passionate fan bases.</div>
         <div class="vc-arrow">Visit XSEN →</div>
+      </a>
+
+      <!-- TeamPal -->
       <a class="vertical-card live" href="https://teampal.fun" target="_blank">
         <div class="vc-color-bar" style="background:linear-gradient(90deg,#00b894,#00cec9);"></div>
         <div class="vc-status live-status"><div class="vc-status-dot"></div>Live</div>
@@ -702,8 +763,49 @@
       <a class="btn-gold" href="https://hotseat.fun" target="_blank">View HotSeat Demo</a>
       <a class="btn-ghost" href="https://cheerpal.fun" target="_blank">View CheerPal</a>
     </div>
-    <div style="margin-top:32px;font-size:0.8rem;color:var(--muted);">
-      Peak Platforms is a DBA of Peak Financial Group LLC · Roanoke, TX · <a href="https://peak-platforms.com" style="color:var(--gold);text-decoration:none;">peak-platforms.com</a>
+  </div>
+</section>
+
+<!-- MISSION / FOUNDATION -->
+<section class="mission" id="mission">
+  <div class="mission-inner">
+    <div class="mission-text fade-up">
+      <div class="section-eyebrow">Our Foundation</div>
+      <h2 class="mission-headline">
+        Infrastructure built on<br/><em>responsible stewardship.</em>
+      </h2>
+      <p class="mission-body">
+        Peak Platforms is a DBA of Peak Financial Group, LLC — a company founded on the belief that commerce and mission are not opposites. A portion of all Peak Platforms revenue is directed to Patriot Rider Ministries and the Freedom Ranch Project, a first responders retreat in Montezuma, New Mexico.
+      </p>
+      <p class="mission-body">
+        When you license Peak infrastructure, you're not just building on solid technology — you're part of something larger.
+      </p>
+      <a class="mission-link" href="https://thepeakfinancialgroup.com" target="_blank">
+        Learn about Peak Financial Group <span class="mission-link-arrow">→</span>
+      </a>
+    </div>
+    <div class="mission-pillars fade-up">
+      <div class="mission-pillar">
+        <div class="mp-icon">🏛️</div>
+        <div>
+          <div class="mp-name">Peak Financial Group, LLC</div>
+          <div class="mp-desc">The parent company. Responsible stewardship for mission-driven acquisitions — partnering with community and faith-based initiatives to make a lasting impact.</div>
+        </div>
+      </div>
+      <div class="mission-pillar">
+        <div class="mp-icon">🏍️</div>
+        <div>
+          <div class="mp-name">Patriot Rider Ministries</div>
+          <div class="mp-desc">A nonprofit ministry serving motorcyclists and first responders through community, faith, and outreach. The beneficiary of Peak Platforms' mission commitment.</div>
+        </div>
+      </div>
+      <div class="mission-pillar">
+        <div class="mp-icon">🌄</div>
+        <div>
+          <div class="mp-name">Freedom Ranch — Montezuma, NM</div>
+          <div class="mp-desc">A first responders retreat operated as an outreach of Patriot Rider Ministries. Peak Financial Group's first mission-driven property acquisition.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -718,10 +820,14 @@
     <a href="#platform">Platform</a>
     <a href="#verticals">Solutions</a>
     <a href="#model">Licensing</a>
+    <a href="#mission">Our Foundation</a>
     <a href="https://cheerpal.fun" target="_blank">CheerPal</a>
-    <a href="hotseat-index.html" target="_blank">HotSeat</a>
+    <a href="https://hotseat.fun" target="_blank">HotSeat</a>
   </div>
-  <div class="footer-copy">© 2025 Peak Financial Group LLC, dba Peak Platforms· peak-platforms.com · All Rights Reserved</div>
+  <div class="footer-copy">© 2025 Peak Financial Group LLC, dba Peak Platforms · All Rights Reserved</div>
+  <div class="footer-mission-note">
+    Peak Platforms is a DBA of <a href="https://thepeakfinancialgroup.com" target="_blank">Peak Financial Group, LLC</a> · A portion of profits supports <a href="#mission">Patriot Rider Ministries</a> and the <a href="#mission">Freedom Ranch Project</a> · Roanoke, TX
+  </div>
 </footer>
 
 <script>
@@ -752,7 +858,6 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  // Trigger hero elements immediately
   document.querySelector('.hero-content').classList.add('fade-up', 'visible');
 </script>
 </body>
