@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Connect Your Domain to Your Website — Step by Step</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    line-height: 1.7;
+  }
+  .page { max-width: 760px; margin: 0 auto; padding: 3rem 2rem 5rem; }
+
+  .header {
+    background: #2d6a4f;
+    color: white;
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+  .header h1 { font-size: 1.7rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .header p { font-size: 0.95rem; opacity: 0.85; }
+
+  .intro-box {
+    background: #e8f5e9;
+    border-left: 4px solid #2d6a4f;
+    padding: 1.2rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2.5rem;
+    font-size: 0.92rem;
+    color: #2d4a3e;
+  }
+
+  .phase {
+    margin-bottom: 3rem;
+  }
+
+  .phase-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #2d6a4f;
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.35rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .phase-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1a1a2e;
+  }
+
+  .step {
+    display: flex;
+    gap: 1.2rem;
+    margin-bottom: 1.5rem;
+    background: white;
+    padding: 1.3rem 1.5rem;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  }
+
+  .step-num {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    background: #2d6a4f;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 1px;
+  }
+
+  .step-content h3 {
+    font-size: 0.97rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .step-content p, .step-content li {
+    font-size: 0.88rem;
+    color: #444;
+  }
+
+  .step-content ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+  }
+  .step-content li { margin-bottom: 0.25rem; }
+
+  .code-block {
+    background: #1a1a2e;
+    color: #a8d8a8;
+    padding: 0.8rem 1rem;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    margin-top: 0.7rem;
+    overflow-x: auto;
+  }
+
+  .code-block .label {
+    color: #888;
+    font-size: 0.72rem;
+    display: block;
+    margin-bottom: 0.3rem;
+  }
+
+  .code-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+  .code-row div { flex: 1; min-width: 120px; }
+  .code-row .field { color: #88c9ff; font-size: 0.72rem; margin-bottom: 0.2rem; }
+  .code-row .val { color: #a8d8a8; font-size: 0.85rem; }
+
+  .tip {
+    background: #fff8e1;
+    border-left: 4px solid #f4c430;
+    padding: 0.9rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 0.8rem;
+    font-size: 0.84rem;
+    color: #5a4a00;
+  }
+  .tip strong { color: #3a3000; }
+
+  .warning {
+    background: #fdecea;
+    border-left: 4px solid #e53935;
+    padding: 0.9rem 1.2rem;
+    border-radius: 0 8px 8px 0;
+    margin-top: 0.8rem;
+    font-size: 0.84rem;
+    color: #5a0000;
+  }
+
+  .divider {
+    border: none;
+    border-top: 2px dashed #ddd;
+    margin: 2.5rem 0;
+  }
+
+  .success-box {
+    background: #e8f5e9;
+    border: 2px solid #2d6a4f;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2.5rem;
+  }
+  .success-box .check { font-size: 2.5rem; margin-bottom: 0.5rem; }
+  .success-box h2 { font-size: 1.2rem; color: #2d6a4f; margin-bottom: 0.5rem; }
+  .success-box p { font-size: 0.88rem; color: #444; }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0.8rem;
+    font-size: 0.84rem;
+  }
+  .summary-table th {
+    background: #2d6a4f;
+    color: white;
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+    font-weight: 500;
+  }
+  .summary-table td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid #eee;
+    font-family: 'Courier New', monospace;
+    color: #333;
+    background: white;
+  }
+  .summary-table tr:nth-child(even) td { background: #f9f9f9; }
+
+  @media (max-width: 600px) {
+    .page { padding: 1.5rem 1rem 4rem; }
+    .header h1 { font-size: 1.3rem; }
+    .code-row { flex-direction: column; gap: 0.5rem; }
+  }
+
+  @media print {
+    body { background: white; }
+    .page { padding: 1rem; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <h1>🌐 Connect Your Domain to Your Website</h1>
+    <p>A simple, step-by-step guide — no technical experience needed</p>
+  </div>
+
+  <div class="intro-box">
+    <strong>What this guide does:</strong> Your website is already set up and ready. This guide walks you through one simple task — pointing your GoDaddy domain name to your new website, so when anyone types your address into a browser, they land on your site. The whole process takes about <strong>10 minutes</strong>, then up to <strong>24 hours</strong> for the internet to fully update.
+  </div>
+
+
+
+  <!-- PHASE 2: GoDaddy -->
+  <div class="phase">
+    <div class="phase-label">🌐 Part 1 of 2</div>
+    <div class="phase-title">Update Your DNS at GoDaddy</div>
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>Log in to GoDaddy</h3>
+        <p>Go to <strong>godaddy.com</strong> and sign in with the account you used to buy your domain.</p>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>Find your domain's DNS settings</h3>
+        <ul>
+          <li>Click your name or account icon in the top right</li>
+          <li>Click <strong>My Products</strong></li>
+          <li>Find your domain name and click <strong>DNS</strong> or <strong>Manage DNS</strong> next to it</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>Add 4 "A Records" — these point your main domain to GitHub</h3>
+        <p>You need to add four records, one at a time. Click <strong>Add</strong> (or <strong>Add Record</strong>) and fill in exactly as shown below. Repeat four times — once for each row:</p>
+        <div class="code-block">
+          <span class="label">Add these 4 records (same Type and Name each time, different Value):</span>
+          <table style="width:100%; font-size:0.82rem; border-collapse:collapse;">
+            <tr>
+              <td style="color:#88c9ff; padding:0.2rem 0.5rem;">Type</td>
+              <td style="color:#88c9ff; padding:0.2rem 0.5rem;">Name</td>
+              <td style="color:#88c9ff; padding:0.2rem 0.5rem;">Value</td>
+              <td style="color:#88c9ff; padding:0.2rem 0.5rem;">TTL</td>
+            </tr>
+            <tr><td style="padding:0.2rem 0.5rem;">A</td><td style="padding:0.2rem 0.5rem;">@</td><td style="padding:0.2rem 0.5rem; color:#a8d8a8;">185.199.108.153</td><td style="padding:0.2rem 0.5rem;">1 Hour</td></tr>
+            <tr><td style="padding:0.2rem 0.5rem;">A</td><td style="padding:0.2rem 0.5rem;">@</td><td style="padding:0.2rem 0.5rem; color:#a8d8a8;">185.199.109.153</td><td style="padding:0.2rem 0.5rem;">1 Hour</td></tr>
+            <tr><td style="padding:0.2rem 0.5rem;">A</td><td style="padding:0.2rem 0.5rem;">@</td><td style="padding:0.2rem 0.5rem; color:#a8d8a8;">185.199.110.153</td><td style="padding:0.2rem 0.5rem;">1 Hour</td></tr>
+            <tr><td style="padding:0.2rem 0.5rem;">A</td><td style="padding:0.2rem 0.5rem;">@</td><td style="padding:0.2rem 0.5rem; color:#a8d8a8;">185.199.111.153</td><td style="padding:0.2rem 0.5rem;">1 Hour</td></tr>
+          </table>
+        </div>
+        <div class="tip"><strong>What is "@"?</strong> The <strong>@</strong> symbol means "the root domain itself" — so yourcharity.org (without www).</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-content">
+        <h3>Add a "CNAME Record" — this handles the www version</h3>
+        <p>Click <strong>Add</strong> again and fill in:</p>
+        <div class="code-block">
+          <div class="code-row">
+            <div><div class="field">Type</div><div class="val">CNAME</div></div>
+            <div><div class="field">Name</div><div class="val">www</div></div>
+            <div><div class="field">Value</div><div class="val">your-org.github.io</div></div>
+            <div><div class="field">TTL</div><div class="val">1 Hour</div></div>
+          </div>
+        </div>
+        <p style="margin-top:0.6rem; font-size:0.84rem; color:#555;">Replace <strong>your-org</strong> with your actual GitHub username (your website coordinator can confirm this).</p>
+        <div class="warning"><strong>⚠️ Important:</strong> GoDaddy may already have a CNAME record for "www" pointing somewhere else. If so, <strong>edit that existing record</strong> instead of adding a new one — you cannot have two CNAME records for "www".</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">5</div>
+      <div class="step-content">
+        <h3>Save everything</h3>
+        <p>Make sure you click <strong>Save</strong> after each record. When done, your DNS records list should show the 4 A records and 1 CNAME you just added.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="divider"/>
+
+  <!-- PHASE 3: Wait & Verify -->
+  <div class="phase">
+    <div class="phase-label">✅ Part 2 of 2</div>
+    <div class="phase-title">Wait, Then Verify It Worked</div>
+
+    <div class="step">
+      <div class="step-num">6</div>
+      <div class="step-content">
+        <h3>Wait for DNS to update</h3>
+        <p>DNS changes can take anywhere from <strong>15 minutes to 24 hours</strong> to spread across the internet. Most of the time it's under an hour. You don't need to do anything — just wait.</p>
+        <div class="tip"><strong>Tip:</strong> Try opening your domain in a private/incognito browser window — it's less likely to show a cached (old) version.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">7</div>
+      <div class="step-content">
+        <h3>Go back to GitHub Pages and enable HTTPS</h3>
+        <p>Once your site loads, go back to <strong>GitHub → Settings → Pages</strong>. You should now see a green checkmark and the option to check <strong>"Enforce HTTPS"</strong>. Check that box — it gives your site the secure padlock 🔒 in the browser bar. This is free and automatic.</p>
+        <div class="tip"><strong>Don't see the HTTPS option yet?</strong> Wait another hour and check again. It takes a bit longer to issue the security certificate.</div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="step-num">8</div>
+      <div class="step-content">
+        <h3>Test your site</h3>
+        <p>Try opening all three of these in your browser — they should all show your website:</p>
+        <ul>
+          <li><strong>yourcharity.org</strong></li>
+          <li><strong>www.yourcharity.org</strong></li>
+          <li>Your old GitHub URL: <strong>yourorg.github.io/yoursite</strong></li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Summary Table -->
+  <hr class="divider"/>
+  <h2 style="font-size:1.1rem; margin-bottom:1rem;">📋 Quick Reference — All DNS Records</h2>
+  <table class="summary-table">
+    <tr>
+      <th>Type</th><th>Name</th><th>Value</th><th>TTL</th>
+    </tr>
+    <tr><td>A</td><td>@</td><td>185.199.108.153</td><td>1 Hour</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.109.153</td><td>1 Hour</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.110.153</td><td>1 Hour</td></tr>
+    <tr><td>A</td><td>@</td><td>185.199.111.153</td><td>1 Hour</td></tr>
+    <tr><td>CNAME</td><td>www</td><td>your-org.github.io</td><td>1 Hour</td></tr>
+  </table>
+
+  <!-- Success Box -->
+  <div class="success-box">
+    <div class="check">🎉</div>
+    <h2>You're all set!</h2>
+    <p>Your domain is now connected to your website. If you run into any trouble, reach out to your website coordinator — they can usually fix any issue in just a few minutes.</p>
+  </div>
+
+</div>
+</body>
+</html>
