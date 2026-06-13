@@ -752,7 +752,8 @@
     <style>
       @media(max-width:768px){
         #hero > div { grid-template-columns:1fr !important; padding:5rem 5vw 3rem !important; }
-        #hero > div > div:last-child { aspect-ratio:16/9; width:100%; }
+        #hero > div > div:first-child { order:2; }
+        #hero > div > div:last-child { order:1; aspect-ratio:16/9; width:100%; }
       }
     </style>
   </section>
@@ -969,6 +970,7 @@
 
 </body>
 </html>
+
 
 
 
