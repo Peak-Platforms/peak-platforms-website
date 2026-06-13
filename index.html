@@ -717,7 +717,7 @@
   <!-- HERO -->
   <section id="hero" style="min-height:100vh;background:var(--slate);position:relative;display:flex;align-items:center;overflow:hidden;">
     <div class="hero-bg"></div>
-    <div style="position:relative;z-index:2;width:100%;padding:8rem 5vw 5rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;">
+    <div style="position:relative;z-index:2;width:100%;padding:5.5rem 5vw 3rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;max-width:1200px;margin:0 auto;">
       <div class="hero-inner" style="padding:0;max-width:100%;">
         <p class="hero-eyebrow">Peak Platforms</p>
         <h1 class="hero-title">Purpose-Built Platforms<br>for <em>Mission-Driven</em> People.</h1>
@@ -749,7 +749,12 @@
         </div>
       </div>
     </div>
-    <style>@media(max-width:768px){#hero-grid{grid-template-columns:1fr !important;}#hero-video{display:none;}}</style>
+    <style>
+      @media(max-width:768px){
+        #hero > div { grid-template-columns:1fr !important; padding:5rem 5vw 3rem !important; }
+        #hero > div > div:last-child { aspect-ratio:16/9; width:100%; }
+      }
+    </style>
   </section>
 
   <!-- VERTICALS -->
@@ -964,5 +969,6 @@
 
 </body>
 </html>
+
 
 
